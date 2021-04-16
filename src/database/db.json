@@ -2,18 +2,99 @@
     "menu": [
         {
             "id": 1,
-            "name": "Strona Główna",
+            "name": "Home",
             "link": "/"
         },
         {
             "id": 2,
-            "name": "Galeria",
-            "link": "/gallery"
+            "name": "Chuck jokes",
+            "link": "/jokes"
         },
         {
             "id": 3,
-            "name": "Kontakt",
-            "link": "/contact"
-        } 
+            "name": "Chuck'o'graphy",
+            "link": "/chuckography"
+        },
+        {
+            "id": 4,
+            "name": "Chuquiz",
+            "link": "/quiz"
+        }  
+    ],
+
+    "movies": [
+        {
+            "id": 1,
+            "type": "movie",
+            "year": "2012",
+            "titlePl": "Niezniszczalni 2",
+            "titleOrg": "The Expendables 2",
+            "character": "Booker",
+            "poster": "/images/expandables2.jpg"
+        },
+        {
+            "id": 2,
+            "type": "movie",
+            "year": "2005",
+            "titlePl": "Zadanie specjalne",
+            "titleOrg": "The Cutter",
+            "character": "John Shepherd",
+            "poster": "/images/thecutter.jpg"
+        },
+        {
+            "id": 3,
+            "type": "movie",
+            "year": "2005",
+            "titlePl": "Strażnik Teksasu - Próba ognia",
+            "titleOrg": "Walker, Texas Ranger: Trial by Fire",
+            "character": "Cordell 'Cord' Walker",
+            "poster": "/images/texasranger.jpg"
+        },
+        {
+            "id": 4,
+            "type": "movie",
+            "year": "2003",
+            "titlePl": "Dzwony piekielne",
+            "titleOrg": "The Bells of Innocence",
+            "character": "Matthew",
+            "poster": "/images/bellsofinnocence.jpg"
+        },
+        {
+            "id": 5,
+            "type": "movie",
+            "year": "2002",
+            "titlePl": "Człowiek prezydenta 2",
+            "titleOrg": "The President's Man: A Line in the Sand",
+            "character": "Joshua McCord",
+            "poster": "/images/the-presidents-man-2.jpg"
+        },
+        {
+            "id": 6,
+            "type": "movie",
+            "year": "2000",
+            "titlePl": "Człowiek prezydenta",
+            "titleOrg": "The President's Man",
+            "character": "Joshua McCord",
+            "poster": "/images/presidentsman.jpg"
+        },
+        {
+            "id": 7,
+            "type": "tv series",
+            "year": "1999",
+            "titlePl": "Strażnicy miasta",
+            "titleOrg": "Sons of Thunder",
+            "character": "Ranger Cordell Walker",
+            "poster": "/images/thunder.jpg"
+        },
+        {
+            "id": 8,
+            "type": "movie",
+            "year": "1998",
+            "titlePl": "Hitman - Cena zemsty",
+            "titleOrg": "Logan's War: Bound by Honor",
+            "character": "Jake Fallon",
+            "poster": "/images/loganswar.jpg"
+
+        }
     ]
 }

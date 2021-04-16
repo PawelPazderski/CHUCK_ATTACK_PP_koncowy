@@ -1,0 +1,53 @@
+.movie-list {
+    background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0) 90.71%);
+    width:fit-content;
+    height: 500px;
+    padding-top:30px;
+    padding-left:50px;
+    padding-right:40px;
+    ul li {
+        padding-right: 40px;
+    }
+    
+    h1 {
+        font-family: 'Lobster', cursive;
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    h4 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+    
+}
+
+.movies-list-items {
+    height: 80%;
+    overflow: auto;
+    z-index: 10;
+}
+
+.card-movie {
+    height: 70vh;
+    width: 1000px;
+    background-color: rgba(255,255,255,0.9) !important;
+    overflow: auto;
+    padding:10px;
+    .btn-sm {
+        margin-bottom: 20px;
+    }
+}
+
+.card-img-top {
+    // height: ;
+    width:100%;
+
+}
+
+.list-container {
+    display:flex;
+}
