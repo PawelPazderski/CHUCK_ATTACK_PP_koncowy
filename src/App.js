@@ -8,6 +8,7 @@ import Home from "./appComponents/Home";
 import Jokes from "./appComponents/Jokes";
 import Navigation from "./appComponents/Navigation";
 import ChuckOGraphy from "./appComponents/ChuckOGraphy";
+import Chuquiz from "./appComponents/Chuquiz";
 
 import {
   Switch,
@@ -34,6 +35,7 @@ const App = () => {
             <Route exact path="/" component={Home}/>
             <Route path="/jokes" component={Jokes}/>
             <Route path="/chuckography" component={ChuckOGraphy}/>
+            <Route path="/quiz" component={Chuquiz}/>
           </Switch>
 
         </>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import Image from 'react-bootstrap/Image'
 import styled from 'styled-components'
 
 const MENU_URL = "http://localhost:3001/movies";
@@ -18,11 +17,10 @@ const ChuckOGraphy = () => {
     const [movieID, setMovieID] = useState(0)
 
     const movieMore = (e) => {
-        console.log(e.target)
-        console.log(e.target.id)
+        // console.log(e.target)
+        // console.log(e.target.id)
         setShowMore(true)
         setMovieID(+e.target.id)
-        
     }
 
     const hideMore = () => {
@@ -44,7 +42,6 @@ const ChuckOGraphy = () => {
 
     return (
         <>
-        {/* <img style={{width:500, height:500}} src="/images/chuck_01.jpg" alt="dupa"/> */}
         <div className="list-container">
         <div className="movie-list">
             <h1>The lucky list</h1>
@@ -75,7 +72,10 @@ const ChuckOGraphy = () => {
                         Chuck Norris as {movieList[movieID-1].character}<br/>
                         World premiere: {movieList[movieID-1].year}<br/>
                         <br />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel quam elementum pulvinar etiam non. Velit ut tortor pretium viverra suspendisse potenti. Turpis egestas pretium aenean pharetra. Sit amet tellus cras adipiscing enim eu. Sollicitudin ac orci phasellus egestas tellus.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Vel quam elementum pulvinar etiam non. 
+                        Velit ut tortor pretium viverra suspendisse potenti. Turpis egestas pretium aenean pharetra. 
+                        Sit amet tellus cras adipiscing enim eu. Sollicitudin ac orci phasellus egestas tellus.
                         </Card.Text>
                         <CustomButton onClick={hideMore} size="sm" variant="dark">Close</CustomButton>
 

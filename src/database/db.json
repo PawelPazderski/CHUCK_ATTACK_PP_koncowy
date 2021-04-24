@@ -96,5 +96,62 @@
             "poster": "/images/loganswar.jpg"
 
         }
+    ],
+    "quiz": [ 
+        {
+            "id": 1,
+            "question": "How old is Chuck?",
+            "answer1": "51",
+            "answer2": "61",
+            "answer3": "71",
+            "answer4": "81",
+            "correct": "71"
+        },
+        {
+            "id": 2,
+            "question": "How many kids does Chuck have?",
+            "answer1": "one",
+            "answer2": "two",
+            "answer3": "five",
+            "answer4": "seven",
+            "correct": "five"
+        },
+        {
+            "id": 3,
+            "question": "Chuck is ...",
+            "answer1": "half german half dutch",
+            "answer2": "half cherokee half irish",
+            "answer3": "half polish half british",
+            "answer4": "half american half mexican",
+            "correct": "half cherokee half irish"
+        },
+        {
+            "id": 4,
+            "question": "How many times was Chuck married?",
+            "answer1": "once",
+            "answer2": "twice",
+            "answer3": "three times",
+            "answer4": "six times",
+            "correct": "twice"
+        },
+        {
+            "id": 5,
+            "question": "What is Chuck's real name?",
+            "answer1": "Carlos Ray",
+            "answer2": "Eric Juan",
+            "answer3": "Theodore Lewis",
+            "answer4": "Enrique Santos",
+            "correct": "Carlos Ray"
+        },
+        {
+            "id": 6,
+            "question": "Chuck had 8th dan in...",
+            "answer1": "Aikido",
+            "answer2": "Kung-fu",
+            "answer3": "Jujitsu",
+            "answer4": "Taekwondo",
+            "correct": "Taekwondo"
+        }
+        
     ]
 }
