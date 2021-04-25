@@ -9,6 +9,7 @@ import Jokes from "./appComponents/Jokes";
 import Navigation from "./appComponents/Navigation";
 import ChuckOGraphy from "./appComponents/ChuckOGraphy";
 import Chuquiz from "./appComponents/Chuquiz";
+import Favourites from "./appComponents/Favourites";
 
 import {
   Switch,
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="/jokes" component={Jokes}/>
             <Route path="/chuckography" component={ChuckOGraphy}/>
             <Route path="/quiz" component={Chuquiz}/>
+            <Route path="/favourites" component={Favourites}/>
           </Switch>
 
         </>

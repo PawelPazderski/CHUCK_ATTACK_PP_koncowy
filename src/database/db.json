@@ -19,7 +19,12 @@
             "id": 4,
             "name": "Chuquiz",
             "link": "/quiz"
-        }  
+        },
+        {
+            "id": 5,
+            "name": "Favourites",
+            "link": "favourites"
+        }
     ],
 
     "movies": [
@@ -151,6 +156,15 @@
             "answer3": "Jujitsu",
             "answer4": "Taekwondo",
             "correct": "Taekwondo"
+        },
+        {
+            "id": 7,
+            "question": "How much wood would a woodchuck chuck if a woodchuck could Chuck Norris?",
+            "answer1": "Wouldchuck would run",
+            "answer2": "Not a bit",
+            "answer3": "All of it",
+            "answer4": "Half of it",
+            "correct": "All of it"
         }
         
     ]
