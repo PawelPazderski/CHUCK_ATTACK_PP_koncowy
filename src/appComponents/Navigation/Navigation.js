@@ -27,7 +27,7 @@ class Navigation extends Component {
         const { menuItems } = this.state;
         return (
             <>
-            
+            <div className="menu-container">
             <ul className="menu">
                 {menuItems.map(item => (
                 <li key={item.id}>
@@ -36,6 +36,8 @@ class Navigation extends Component {
                 )
                 )}
             </ul>
+            </div>
+           
             
             </>
         )

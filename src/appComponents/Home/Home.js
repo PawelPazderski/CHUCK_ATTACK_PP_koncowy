@@ -13,7 +13,7 @@ const Home = () => {
             volume={0.1}
             // controls
           />
-          <div className="background"></div>
+          {/* <div className="background"></div> */}
         </>
     )
 }

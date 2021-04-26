@@ -42,8 +42,8 @@ const ChuckOGraphy = () => {
 
     return (
         <>
-        <div className="list-container">
-        <div className="movie-list">
+        {/* <div className="list-container"> */}
+        {!showMore ? (<div className="movie-list">
             <h1>The lucky list</h1>
             <div className="movies-list-items">
                 <ul>
@@ -61,8 +61,8 @@ const ChuckOGraphy = () => {
             
             </div>
             
-        </div>
-        {showMore && <Card className="card-movie" style={{ width: '25rem' }}>
+        </div>)
+        : (<Card className="card-movie" style={{ width: '30rem' }}>
                     <Card.Title>{movieList[movieID-1].titleOrg}</Card.Title>
                     <Card.Img variant="top" src={movieList[movieID-1].poster} alt="foto" />
 
@@ -80,8 +80,8 @@ const ChuckOGraphy = () => {
                         <CustomButton onClick={hideMore} size="sm" variant="dark">Close</CustomButton>
 
                     </Card.Body>
-                    </Card>}
-        </div>
+                    </Card>)}
+        {/* </div> */}
         </>
     )
 }
