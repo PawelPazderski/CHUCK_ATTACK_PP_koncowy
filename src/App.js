@@ -12,11 +12,9 @@ import Chuquiz from "./appComponents/Chuquiz";
 import Favourites from "./appComponents/Favourites";
 
 import {
-  Switch,
   BrowserRouter as Router,
+  Routes,
   Route,
-
-
 } from 'react-router-dom'
 
 
@@ -32,13 +30,13 @@ const App = () => {
         
           <Navigation />
           
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route path="/jokes" component={Jokes}/>
-            <Route path="/chuckography" component={ChuckOGraphy}/>
-            <Route path="/quiz" component={Chuquiz}/>
-            <Route path="/favourites" component={Favourites}/>
-          </Switch>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/jokes" element={<Jokes />}/>
+            <Route path="/chuckography" element={<ChuckOGraphy />}/>
+            <Route path="/quiz" element={<Chuquiz />}/>
+            <Route path="/favourites" element={<Favourites />}/>
+          </Routes>
 
         </>
       </Router>

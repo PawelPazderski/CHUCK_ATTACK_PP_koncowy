@@ -15,7 +15,7 @@
     .question-text {
         font-size: 1.5rem;
     }
-    .form-group .quiz-select {
+    .quiz-select {
         // font-size: 3rem;
         // background-color: rgba(255,255,255,0.9) !important;
         select {
@@ -25,15 +25,78 @@
                 background: brown;
                 color: white;
             }
-            &:focus {
-                border:2px solid brown;
-                box-shadow: none;
-            }
             option:checked {
                 background-color: red;
                 color: green;
             }
+            &:focus {
+                border:2px solid brown;
+                box-shadow: none;
+            }
+            
         }
         
     }
 }
+
+.question-container {
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 30px;
+    margin-bottom: 50px;
+    padding: 25px;
+    
+}
+
+.single-question-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .checkmark {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+}
+
+.single-question-container:hover input ~ .checkmark {
+    background-color: rgba(165, 42, 42, 0.5);
+    }
+
+.single-question-container input:checked ~ .checkmark {
+    background-color: brown;
+    }
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    }
+
+.single-question-container input:checked ~ .checkmark:after {
+    display: block;
+    }
+
+.single-question-container .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }

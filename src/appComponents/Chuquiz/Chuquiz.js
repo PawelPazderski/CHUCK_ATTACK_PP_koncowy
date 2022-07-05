@@ -10,10 +10,6 @@ const CustomButton = styled(Button)`
     border: none;
     `
 
-// const quizSelect = document.querySelector(".form-control")
-
-
-
 const Chuquiz = () => {
     const [questionList, setQuestionList] = useState([])
     const [startQuiz, setStartQuiz] = useState(false)
@@ -36,6 +32,7 @@ const Chuquiz = () => {
         if (select === question.correct) {
             setResult(prev => prev + 1)
         }
+        clearRadios()
     }
 
     useEffect(() => {
@@ -43,7 +40,21 @@ const Chuquiz = () => {
     },[index])
     
     const handleSelect = (e) => {
-        setSelect(e.target.value)
+        // let optionIndex = e.target.options.selectedIndex;
+        // console.log(e.target.options[optionIndex]);
+
+        // e.target.options[optionIndex].checked = true
+        console.log(e.target.value)
+        
+        setSelect(e.target.value);
+    }
+
+    const clearRadios = () => {
+        const radios = document.querySelectorAll("[name = quiz-answer]");
+        console.log(radios)
+        radios.forEach((item) => {
+            return item.checked = false
+        })
     }
 
 
@@ -78,37 +89,32 @@ const Chuquiz = () => {
         <h1>Welcome to Chuquiz</h1>
         <h2>Result: {result}/{questionList.length}</h2>
             {!startQuiz && <CustomButton onClick={beginQuiz} size="lg" variant="dark">START</CustomButton>}
-           
+
             {startQuiz && (
                 <>
-                 <Form>
-                <Form.Group controlId="exampleForm.ControlSelect2">
-                    <Form.Label className="question-text">{question.question}</Form.Label>
-                    <div className="quiz-select">
-                        <Form.Control className="quiz-select" value={select} onChange={handleSelect} as="select" multiple>
-                        <option>{question.answer1}</option>
-                        <option>{question.answer2}</option>
-                        <option>{question.answer3}</option>
-                        <option>{question.answer4}</option>
-                        </Form.Control>
-                    </div>
+                <div className='question-container'>
+                    <h2 className="question-text">{question.question}</h2>
                     
-                </Form.Group>
-                
-                </Form>
-                {/* <form>
-               
-                    <h4>{question.question}</h4>
-                    <select value={select} onChange={handleSelect} as="select" multiple>
+                    <label className="single-question-container">{question.answer1}
+                        <input type="radio" name="quiz-answer" value={question.answer1} onChange={handleSelect}/>
+                        <span className="checkmark"></span>
+                    </label>
+                    <label className="single-question-container">{question.answer2}
+                        <input type="radio" name="quiz-answer" value={question.answer2} onChange={handleSelect}/>
+                        <span className="checkmark"></span>
+                    </label>
+                    <label className="single-question-container">{question.answer3}
+                        <input type="radio" name="quiz-answer" value={question.answer3} onChange={handleSelect}/>
+                        <span className="checkmark"></span>
+                    </label>
+                    <label className="single-question-container">{question.answer4}
+                        <input type="radio" name="quiz-answer" value={question.answer4} onChange={handleSelect}/>
+                        <span className="checkmark"></span>
+                    </label>
                     
-                    <option>{question.answer1}</option>
-                    <option>{question.answer2}</option>
-                    <option>{question.answer3}</option>
-                    <option>{question.answer4}</option>
-                    </select>
+                </div>
                 
                 
-                </form> */}
                 {index !== questionList.length - 1 && <CustomButton onClick={nextQuestion} size="lg" variant="dark">NEXT</CustomButton>}
                 <br />
                 <CustomButton onClick={finishQuiz} size="md" variant="dark">FINISH</CustomButton>

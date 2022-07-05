@@ -31,14 +31,12 @@ class Navigation extends Component {
             <ul className="menu">
                 {menuItems.map(item => (
                 <li key={item.id}>
-                    <NavLink exact to={item.link} activeClassName="active" className="menuLink">{item.name}</NavLink>
+                    <NavLink exact="true" to={item.link} activeclassname="active" className="menuLink">{item.name}</NavLink>
                 </li>
                 )
                 )}
             </ul>
             </div>
-           
-            
             </>
         )
     }
