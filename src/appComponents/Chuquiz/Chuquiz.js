@@ -44,14 +44,14 @@ const Chuquiz = () => {
         // console.log(e.target.options[optionIndex]);
 
         // e.target.options[optionIndex].checked = true
-        console.log(e.target.value)
+        console.log(`your answer: ${e.target.value}`, `/ correct answer: ${question.correct}`)
         
         setSelect(e.target.value);
     }
 
     const clearRadios = () => {
         const radios = document.querySelectorAll("[name = quiz-answer]");
-        console.log(radios)
+
         radios.forEach((item) => {
             return item.checked = false
         })
@@ -66,7 +66,7 @@ const Chuquiz = () => {
         setQuestion([])
         setIndex(0)
 
-        console.log("end this shit")
+        console.log("end of quiz")
     }
 
 
