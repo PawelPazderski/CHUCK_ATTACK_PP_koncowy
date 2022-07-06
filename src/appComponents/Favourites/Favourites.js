@@ -11,31 +11,18 @@ const Favourites = () => {
         // console.log(carouselRef)
     },[])
 
-
-
     const removeJoke = (e) => {
-    
-        console.log(e.currentTarget)
+        // console.log(e.currentTarget)
         const target = e.currentTarget
-        const lastEl = myJokes[myJokes.length-1]
+        const firstEl = myJokes[0]
         
+        const jokes = myJokes.filter(el => el.id !== +target.dataset.id)
+        localStorage.setItem("bestJokes", JSON.stringify(jokes))
+        setMyJokes(JSON.parse(localStorage.bestJokes))
 
-        if (lastEl.id === +target.dataset.id) {
-            
-            const jokes = myJokes.filter(el => el.id !== +target.dataset.id)
-            localStorage.setItem("bestJokes", JSON.stringify(jokes))
-            setMyJokes(JSON.parse(localStorage.bestJokes))
-
+        if (firstEl.id !== +target.dataset.id) {
             carouselRef.current.prev()
-            
-        } else {
-            const jokes = myJokes.filter(el => el.id !== +target.dataset.id)
-
-        
-            localStorage.setItem("bestJokes", JSON.stringify(jokes))
-            setMyJokes(JSON.parse(localStorage.bestJokes))
         }
-
     }
 
 return (
