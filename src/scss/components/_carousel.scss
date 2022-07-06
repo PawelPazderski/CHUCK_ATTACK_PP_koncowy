@@ -8,9 +8,9 @@
 
 
 .joke-carousel-item {
-    min-height: 200px;
     height:fit-content;
-    // border-radius: 25px;
+    min-height: 200px;
+    border-radius: 25px;
     background-color: rgba($color: brown, $alpha: 0.7);
     h3 {
         padding-top: 25px;
@@ -45,7 +45,6 @@
     position:absolute;
     width:20px;
     height:20px;
-  
     i {
         color:rgba($color: white, $alpha: 0.7);
         &:hover {
@@ -56,6 +55,7 @@
 
 .go-to-jokes {
     background: rgba($color: brown, $alpha: 0.7);
+    border-radius: 25px;
     text-shadow: 3px 3px black;
     color: white;
     height: fit-content;

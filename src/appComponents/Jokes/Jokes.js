@@ -35,14 +35,11 @@ const Jokes = () => {
     const addToFavourite = () => {
         // localStorage.clear()
         const jokeArray = JSON.parse(localStorage.bestJokes);
-        console.log(jokeArray, randomJoke)
+        // console.log(jokeArray, randomJoke)
         const filter = jokeArray.filter(e => e.id === randomJoke.id)
-        // console.log(filter)
+
     
         filter.length ? alert("You already added it:)") : jokeArray.push(randomJoke)
-        // jokeArray.push(randomJoke)
-     
-        
 
         localStorage.setItem("bestJokes", JSON.stringify(jokeArray))
 
