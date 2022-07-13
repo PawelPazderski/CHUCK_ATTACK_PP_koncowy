@@ -27,9 +27,7 @@ const App = () => {
 
       <Router>
         <>
-        
           <Navigation />
-          
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/jokes" element={<Jokes />}/>
@@ -37,7 +35,6 @@ const App = () => {
             <Route path="/quiz" element={<Chuquiz />}/>
             <Route path="/favourites" element={<Favourites />}/>
           </Routes>
-
         </>
       </Router>
       

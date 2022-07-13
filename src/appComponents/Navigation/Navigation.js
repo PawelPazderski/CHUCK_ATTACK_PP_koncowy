@@ -1,32 +1,29 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect, Component } from 'react'
 import {NavLink} from "react-router-dom"
 
+import app from "./../../firebase"
+import { getDatabase, ref, child, get } from "firebase/database";
 
-const MENU_URL = "http://localhost:3001/menu";
 
-class Navigation extends Component {
-    state = {
-        menuItems: []
-    } 
+const Navigation = () => {
+    const [menuItems, setMenuItems] = useState([])
 
-    componentDidMount() {
-        fetch(MENU_URL)
-        .then(res => {
-            if (res.ok) {
-                return res.json()
+    useEffect(()=> {
+        const dbRef = ref(getDatabase(app));
+            get(child(dbRef, `menu`)).then((snapshot) => {
+            if (snapshot.exists()) {
+                // console.log(snapshot.val());
+                setMenuItems(snapshot.val())
+            } else {
+                console.log("No data available");
             }
+            }).catch((error) => {
+            console.error(error);
+            });
+    },[])
 
-            throw new Error("Błąd")
-        } )
-        .then(menuItems => this.setState( {menuItems} ))
-        .catch(err => console.log(err))
-    }
-
-    render() {
-
-        const { menuItems } = this.state;
-        return (
-            <>
+    return (
+        <>
             <div className="menu-container">
             <ul className="menu">
                 {menuItems.map(item => (
@@ -37,9 +34,9 @@ class Navigation extends Component {
                 )}
             </ul>
             </div>
-            </>
-        )
-    }
+        </>
+    )
+    
 }
 
 export default Navigation;

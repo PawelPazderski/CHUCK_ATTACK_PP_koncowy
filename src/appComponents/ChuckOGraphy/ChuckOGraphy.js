@@ -4,6 +4,9 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import styled from 'styled-components'
 
+import app from "./../../firebase"
+import { getDatabase, ref, child, get } from "firebase/database";
+
 const MENU_URL = "http://localhost:3001/movies";
 
 const CustomButton = styled(Button)`
@@ -28,15 +31,17 @@ const ChuckOGraphy = () => {
     }
 
     useEffect(() => {
-        fetch(MENU_URL)
-            .then(res => {
-                if (res.ok) {
-                    return res.json()
-                }
-                throw new Error("Błąd")
-            } )
-            .then(movies => setMovieList(movies))
-            .catch(err => console.log(err))
+        const dbRef = ref(getDatabase(app));
+            get(child(dbRef, `movies`)).then((snapshot) => {
+            if (snapshot.exists()) {
+                // console.log(snapshot.val());
+                setMovieList(snapshot.val())
+            } else {
+                console.log("No data available");
+            }
+            }).catch((error) => {
+            console.error(error);
+            });
 
     },[])
 

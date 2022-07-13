@@ -3,7 +3,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import styled from 'styled-components'
 
-const MENU_URL = "http://localhost:3001/quiz";
+import app from "./../../firebase"
+import { getDatabase, ref, child, get } from "firebase/database";
 
 const CustomButton = styled(Button)`
     background: brown;
@@ -71,15 +72,17 @@ const Chuquiz = () => {
 
 
     useEffect(() => {
-        fetch(MENU_URL)
-            .then(res => {
-                if (res.ok) {
-                    return res.json()
-                }
-                throw new Error("Błąd")
-            } )
-            .then(questions => setQuestionList(questions))
-            .catch(err => console.log(err))
+        const dbRef = ref(getDatabase(app));
+            get(child(dbRef, `quiz`)).then((snapshot) => {
+            if (snapshot.exists()) {
+                // console.log(snapshot.val());
+                setQuestionList(snapshot.val())
+            } else {
+                console.log("No data available");
+            }
+            }).catch((error) => {
+            console.error(error);
+            });
 
     },[])
 

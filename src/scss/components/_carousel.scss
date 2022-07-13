@@ -1,15 +1,13 @@
 .joke-carousel {
     margin: 0 auto;
     width: 70%;
-    
 }
 
-
-
-
 .joke-carousel-item {
+    margin-left: 25px;
+    margin-right: 25px;
     height:fit-content;
-    min-height: 30vh;
+    min-height: 25vh;
     border-radius: 25px;
     background-color: rgba($color: brown, $alpha: 0.7);
     h3 {

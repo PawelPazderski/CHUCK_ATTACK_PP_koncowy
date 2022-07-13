@@ -28,8 +28,6 @@ body {
       monospace;
   }
 
-  
-
   .App {
     // background-color: lightblue;
     // display: flex;
@@ -39,6 +37,13 @@ body {
     height: 100vh;
     background: url("/images/chuck_01.jpg") no-repeat center/cover;
   }
+
+@media(max-width:960px) {
+  .App {
+    background: url("/images/chuck_01.jpg") no-repeat 70%/cover;
+  }
+}
+
 
   /* width */
 ::-webkit-scrollbar {

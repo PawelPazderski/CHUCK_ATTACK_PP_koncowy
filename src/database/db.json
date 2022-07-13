@@ -23,7 +23,7 @@
         {
             "id": 5,
             "name": "Favourites",
-            "link": "favourites"
+            "link": "/favourites"
         }
     ],
 
