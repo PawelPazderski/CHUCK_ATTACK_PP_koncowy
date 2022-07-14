@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import styled from 'styled-components'
+import Swal from 'sweetalert2'
 
 import app from "./../../firebase"
 import { getDatabase, ref, child, get } from "firebase/database";
@@ -32,6 +33,29 @@ const Chuquiz = () => {
 
         if (select === question.correct) {
             setResult(prev => prev + 1)
+            Swal.fire({
+                icon: 'success',
+                title: 'Good answer',
+                background: 'brown',
+                color: 'white',
+                showConfirmButton: false,
+                timer: 1000,
+                customClass: {
+                    popup: "swal2-custom"
+                }
+                })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Wrong answer',
+                background: 'brown',
+                color: 'white',
+                showConfirmButton: false,
+                timer: 1000,
+                customClass: {
+                    popup: "swal2-custom"
+                }
+                })
         }
         clearRadios()
     }
@@ -62,6 +86,29 @@ const Chuquiz = () => {
     const finishQuiz = () => {
         if (select === question.correct) {
             setResult(prev => prev + 1)
+            Swal.fire({
+                icon: 'success',
+                title: 'Good answer',
+                background: 'brown',
+                color: 'white',
+                showConfirmButton: false,
+                timer: 1000,
+                customClass: {
+                    popup: "swal2-custom"
+                }
+                })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Wrong answer',
+                background: 'brown',
+                color: 'white',
+                showConfirmButton: false,
+                timer: 1000,
+                customClass: {
+                    popup: "swal2-custom"
+                }
+                })
         }
         setStartQuiz(false)
         setQuestion([])
@@ -90,7 +137,7 @@ const Chuquiz = () => {
         <>
         <div className="quiz-body">
         <h1>Welcome to Chuquiz</h1>
-        <h2>Result: {result}/{questionList.length}</h2>
+        <h3 className="result-text">Result: {result}/{questionList.length}</h3>
             {!startQuiz && <CustomButton onClick={beginQuiz} size="lg" variant="dark">START</CustomButton>}
 
             {startQuiz && (
@@ -120,7 +167,7 @@ const Chuquiz = () => {
                 
                 {index !== questionList.length - 1 && <CustomButton onClick={nextQuestion} size="lg" variant="dark">NEXT</CustomButton>}
                 <br />
-                <CustomButton onClick={finishQuiz} size="md" variant="dark">FINISH</CustomButton>
+                {index === questionList.length -1 && <CustomButton onClick={finishQuiz} size="lg" variant="dark">FINISH</CustomButton>}
                 </>
             )}
         </div>

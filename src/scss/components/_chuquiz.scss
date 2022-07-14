@@ -1,13 +1,21 @@
+// @import 'sweetalert2/themes/dark/dark.scss';
+
 .quiz-body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 75px;
     h1 {
         font-family: 'Lobster', cursive;
         font-size: 3rem;
         color: white;
         text-shadow: 2px 2px black;
+        text-align: center;
+    }
+    .result-text {
+        color: rgba(255, 255, 255, 0.75);
+        margin: 25px;
     }
     h2 {
         color: brown;
@@ -100,4 +108,8 @@
         border-radius: 50%;
         background: white;
     }
+
+.swal2-custom {
+    border-radius: 25px !important;
+}
 

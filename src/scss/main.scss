@@ -6,6 +6,7 @@
 @import 'components/chuckography';
 @import 'components/chuquiz';
 @import 'components/carousel';
+// @import 'sweetalert2/theme-dark/dark.scss';
 
 
 * {
@@ -34,7 +35,8 @@ body {
     // position:relative;
     padding-top:15px;
     width: 100%;
-    height: 100vh;
+    height: fit-content;
+    min-height: 100vh;
     background: url("/images/chuck_01.jpg") no-repeat center/cover;
   }
 

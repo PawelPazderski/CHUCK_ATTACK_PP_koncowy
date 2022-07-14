@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import Spinner from 'react-bootstrap/Spinner';
 import useSound from 'use-sound'
 
 const Jokes = () => {
     const [randomJoke, setRandomJoke] = useState({
-        id:0,
-        joke: "dupa zbita"
+        id: 0,
+        joke: ""
     })
     const [nextJoke, setNextJoke] = useState(false)
     const [play] = useSound("/sounds/punch01.mp3",{ volume: 0.2 })
@@ -18,11 +19,11 @@ const Jokes = () => {
 
 
     useEffect(()=>{
-        fetch("http://api.icndb.com/jokes/random")
+        fetch("https://api.chucknorris.io/jokes/random")
             .then(res => res.json())
             .then(data => setRandomJoke({
-                ...data.value,
-                joke: data.value.joke.replace(/&quot;/g, '"')
+                id: data.id,
+                joke: data.value
             }))
             .catch(err => console.log(err))
     },[nextJoke])
@@ -50,26 +51,62 @@ const Jokes = () => {
     return (
         <>
         <div className="joke">
-                <h2>{randomJoke.joke}</h2>
-                <div className="another_bck"
-                onClick={() => {
-                    handleJoke()
-                    play()}
-                }
-                >
-                <i className="fas fa-angle-right fa-2x"></i>
-                </div>
-                <p>hit again</p>
-                <div className="another_bck"
-                     onClick={() => {
-                         play()
-                         addToFavourite()
+                <div className="joke-container">
+                    <h2>{randomJoke.joke.length 
+                    ? 
+                    randomJoke.joke 
+                    :
+                    <div>
+                        <Spinner animation="border" variant="dark" />
+                        <p>Loading...</p>
+                    </div> 
+                    }
+                    </h2>
+                    {randomJoke.joke.length 
+                    ? 
+                    <div className='joke-buttons'>
+                        <div className="joke-btn">
+                            <div className="another_bck"
+                                onClick={() => {
+                                    play()
+                                    addToFavourite()
+                                    }
+                                }
+                                >
+                                <i className="fas fa-heart"></i>
+                            </div>
+                            <p>add to favourites</p>
+                        </div>
+                        <div className="joke-btn">
+                            <div className="another_bck"
+                                onClick={() => {
+                                    handleJoke()
+                                    play()
+                                    }
+                                }
+                                >
+                                <i className="fas fa-angle-right fa-2x"></i>
+                            </div>
+                            <p>hit again</p>
+                        </div>
+                    </div>
+                    :
+                    null
+                    }
+                    
+                </div> 
+                
+                
+                {/* <div className="another_bck"
+                        onClick={() => {
+                            play()
+                            addToFavourite()
                         }
                     }
                     >
                 <i className="fas fa-heart"></i>
                 </div>
-                <p>add to favourites</p>
+                <p>add to favourites</p> */}
             
             
         </div>

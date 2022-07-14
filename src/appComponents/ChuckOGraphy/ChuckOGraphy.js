@@ -67,7 +67,7 @@ const ChuckOGraphy = () => {
             </div>
             
         </div>)
-        : (<Card className="card-movie" style={{ width: '30rem' }}>
+        : (<Card className="card-movie">
                     <Card.Title>{movieList[movieID-1].titleOrg}</Card.Title>
                     <Card.Img variant="top" src={movieList[movieID-1].poster} alt="foto" />
 

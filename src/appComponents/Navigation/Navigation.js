@@ -24,15 +24,19 @@ const Navigation = () => {
 
     return (
         <>
-            <div className="menu-container">
-            <ul className="menu">
-                {menuItems.map(item => (
-                <li key={item.id}>
-                    <NavLink exact="true" to={item.link} activeclassname="active" className="menuLink">{item.name}</NavLink>
-                </li>
-                )
-                )}
-            </ul>
+            <div className="menu-container hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label className="menu__btn" htmlFor="menu__toggle">
+                    <span></span>
+                </label>
+                <ul className="menu menu__box">
+                    {menuItems.map(item => (
+                    <li key={item.id}>
+                        <NavLink exact="true" to={item.link} activeclassname="active" className="menuLink menu__item">{item.name}</NavLink>
+                    </li>
+                    )
+                    )}
+                </ul>
             </div>
         </>
     )

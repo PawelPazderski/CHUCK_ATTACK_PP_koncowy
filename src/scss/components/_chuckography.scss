@@ -1,10 +1,12 @@
 .movie-list {
-    background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0) 90.71%);
-    width:fit-content;
-    height: 500px;
+    background: linear-gradient(105deg, rgba(255,255,255,0.9), rgba(255,255,255,0) 95%);
+    margin: 0 auto;
+    margin-top: 50px;
+    width: fit-content;
+    height: 80vh;
     padding-top:30px;
-    padding-left:50px;
-    padding-right:40px;
+    padding-left:30px;
+    padding-right:30px;
     ul li {
         padding-right: 40px;
     }
@@ -34,17 +36,22 @@
 
 
 .card-movie {
-//     position:absolute;
-//     top: 50%;
-// right:50%;
     margin: 0 auto;
-    height: 60%;
-    width: 1000px;
+    margin-top: 50px;
+    height: 700px;
+    width: 600px;
     background-color: rgba(255,255,255,0.9) !important;
     overflow: auto;
     padding:10px;
     .btn-sm {
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 960px) {
+    .card-movie {
+        width: 95vw;
+        height: 600px;
     }
 }
 

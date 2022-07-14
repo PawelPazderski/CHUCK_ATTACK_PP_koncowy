@@ -12,15 +12,14 @@ const Favourites = () => {
     },[])
 
     const removeJoke = (e) => {
-        // console.log(e.currentTarget)
         const target = e.currentTarget
         const firstEl = myJokes[0]
-        
-        const jokes = myJokes.filter(el => el.id !== +target.dataset.id)
+
+        const jokes = myJokes.filter( el => el.id !== target.dataset.id)
         localStorage.setItem("bestJokes", JSON.stringify(jokes))
         setMyJokes(JSON.parse(localStorage.bestJokes))
 
-        if (firstEl.id !== +target.dataset.id) {
+        if (firstEl.id !== target.dataset.id) {
             carouselRef.current.prev()
         }
     }
