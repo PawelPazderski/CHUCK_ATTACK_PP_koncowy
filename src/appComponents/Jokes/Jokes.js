@@ -10,7 +10,6 @@ const Jokes = () => {
     })
     const [nextJoke, setNextJoke] = useState(false)
     const [play] = useSound("/sounds/punch01.mp3",{ volume: 0.2 })
-    // const [gun] = useSound("/sounds/gun01.mp3")
 
     useEffect(()=>{
         if (!localStorage.bestJokes) {
@@ -110,23 +109,9 @@ const Jokes = () => {
                     }
                     
                 </div> 
-                
-                
-                {/* <div className="another_bck"
-                        onClick={() => {
-                            play()
-                            addToFavourite()
-                        }
-                    }
-                    >
-                <i className="fas fa-heart"></i>
-                </div>
-                <p>add to favourites</p> */}
-            
-            
         </div>
         </>
     )
 }
 
-export default Jokes
+export default Jokes;
