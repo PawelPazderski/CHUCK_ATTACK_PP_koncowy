@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Spinner from 'react-bootstrap/Spinner';
+import Swal from 'sweetalert2'
 import useSound from 'use-sound'
 
 const Jokes = () => {
@@ -40,7 +41,21 @@ const Jokes = () => {
         const filter = jokeArray.filter(e => e.id === randomJoke.id)
 
     
-        filter.length ? alert("You already added it:)") : jokeArray.push(randomJoke)
+        filter.length 
+        ? 
+        Swal.fire({
+            icon: 'info',
+            title: 'You already added this one',
+            background: 'brown',
+            color: 'white',
+            showConfirmButton: false,
+            timer: 1000,
+            customClass: {
+                popup: "swal2-custom"
+            }
+        })
+        : 
+        jokeArray.push(randomJoke)
 
         localStorage.setItem("bestJokes", JSON.stringify(jokeArray))
 
